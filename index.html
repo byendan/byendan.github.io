@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Brendan Brown</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                
+                <a class="navbar-brand" href="index.html">Home</a>
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            
+            
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                <p class="navbar-text"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Brendan Brown</p>
+                <ul class="nav navbar-nav pull-right">
+                    
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="examples.html">Examples</a>
+                    </li>
+                    <li>
+                        <a href="resume.html">Resume</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-sm-1 opsBox">
+                <h4>Theme</h4>
+                <span title="Blue, default">
+                    <div class="def-select theme-edit">
+                    </div>
+                </span>
+                <span title="red">
+                    <div class="red-select theme-edit">
+                    </div>
+                </span>
+                <span title="green">
+                    <div class="green-select theme-edit">
+                    </div>
+                </span>
+                <span title="purple">
+                    <div class="purple-select theme-edit">
+                    </div>
+                </span>
+            </div>
+            <div class="center col-sm-10 mainBody">
+                <h2>Welcome to my page</h2>
+                <p>This is a glimpse of my work, feel free to read more about me and view other projects I have worked on.</p>
+            </div>
+        </div>
+        
+        
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    
+    <script>
+    $('.theme-edit').click(function() {
+         if ($(this).hasClass('def-select')) {
+             $('.navbar-default').css("background-color", "rgb(82, 172, 199)");
+             $("footer").css("background-color", "rgb(82, 172, 199)");
+             $(".mainBody").css("background", "url('https://c2.staticflickr.com/6/5246/5319624060_55c5231245_b.jpg')");
+         } else if ($(this).hasClass('red-select')) {
+             $('.navbar-default').css("background-color", "red");
+             $("footer").css("background-color", "red");
+             $(".mainBody").css("background", "url('http://img03.deviantart.net/8027/i/2011/135/1/a/leather_texture_1_by_gurumedit-d3getyo.jpg')");
+         } else if ($(this).hasClass('green-select')) {
+             $('.navbar-default').css("background-color", "green");
+             $("footer").css("background-color", "green");
+             $(".mainBody").css("background", "url('http://img03.deviantart.net/7b6c/i/2010/184/a/2/green_texture_43_by_capricorn7769.jpg')");
+         } else if ($(this).hasClass('purple-select')) {
+             $('.navbar-default').css("background-color", "purple");
+             $("footer").css("background-color", "purple");
+             $(".mainBody").css("background", "url('http://img04.deviantart.net/18f8/i/2010/221/0/a/vintage_glass_bottles_texture_by_angelandspot.jpg')");
+         }
+    });
+    </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
