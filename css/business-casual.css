@@ -15,26 +15,31 @@ body {
 }
 
 
-
-
-.opsBox{
-    padding: 15px;
-    margin-right: 50px;
+.opsBox ul {
     background: black;
     position: fixed;
-    top: 100px;
+    top: 65px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 30px;
+    z-index: 500;
+}
+
+.opsBox ul li {
+  
 }
 
 .theme-edit {
- width: 40px;
- height: 40px;
+ width: 20px;
+ height: 20px;
  border-radius: 100%;
- margin-top: 20px;
+ margin-left: 5px;
 }
 
 .theme-edit:hover {
-    width: 45px;  
-    height: 45px;
+    width: 25px;  
+    height: 25px;
 }
 
 .def-select {
