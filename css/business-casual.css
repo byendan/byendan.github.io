@@ -238,7 +238,7 @@ footer p {
         border-top-width: 0px;
         border-left-width: 0px;
         border-right-width: 1px;
-        border-bottom-width: 1px;
+        border-bottom-width: 0px;
         border color: rgba(0, 0, 0, 0.24);
         text-decoration: none;
         color: black;
@@ -252,7 +252,7 @@ footer p {
         border-top-width: 0px;
         border-left-width: 1px;
         border-right-width: 0px;
-        border-bottom-width: 1px;
+        border-bottom-width: 0px;
         color: black;
     }
     
