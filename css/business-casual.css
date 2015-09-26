@@ -14,6 +14,8 @@ body {
 }
 
 
+
+
 .opsBox{
     padding: 15px;
     height: 500px;
@@ -38,19 +40,19 @@ body {
 }
 
 .red-select {
-    background: red;   
+    background: #ce3939;   
 }
 
 .green-select {
-    background: green;
+    background: #61aa34;
 }
 
 .purple-select {
-    background: purple;   
+    background: #ac42ac;   
 }
 
 .mainBody {
-    height: 500px;
+    
     margin-bottom: 20px;
     color: black;
     background: #fff;
@@ -64,6 +66,18 @@ body {
 .mainBody p {
     color:white;   
 }
+
+#gjs-canvas {
+            border: 1px solid #ccc;
+            margin: 20px;
+            box-shadow: 14px 10px 30px 0px rgba(50, 50, 50, 0.75);
+            width: calc(100% - 40px);
+            height: calc(100% - 60px);
+            position: inherit;
+            /** automatically made visible once game is loaded **/
+            display:none;
+            background: white;
+        }
 
 h1,
 h2,

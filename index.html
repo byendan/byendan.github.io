@@ -27,6 +27,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="gamejs/gamejs-2.0.1.js"></script>
+    <script>
+        require.setModuleRoot('./');
+        require.run('main')
+    </script>
 
 </head>
 
@@ -101,6 +107,12 @@
                 <p>This is a glimpse of my work, feel free to read more about me and view other projects I have worked on.</p>
                 <br>
                 <h1>Currently Under Development, follow me on <a target="_blank" href="https://github.com/byendan">Github</a> for updates.</h1>
+                
+                <div id="gjs-loader">
+                    <progress max=1 min=0 steps=0.1></progress>
+                    <br/>Loading...
+                </div>
+                <canvas id="gjs-canvas"></canvas>
             </div>
         </div>
         
@@ -129,16 +141,16 @@
              $("footer").css("background-color", "rgb(82, 172, 199)");
              $(".mainBody").css("background", "url('https://c2.staticflickr.com/6/5246/5319624060_55c5231245_b.jpg')");
          } else if ($(this).hasClass('red-select')) {
-             $('.navbar-default').css("background-color", "red");
-             $("footer").css("background-color", "red");
+             $('.navbar-default').css("background-color", "#ce3939");
+             $("footer").css("background-color", "#ce3939");
              $(".mainBody").css("background", "url('http://img03.deviantart.net/8027/i/2011/135/1/a/leather_texture_1_by_gurumedit-d3getyo.jpg')");
          } else if ($(this).hasClass('green-select')) {
-             $('.navbar-default').css("background-color", "green");
-             $("footer").css("background-color", "green");
+             $('.navbar-default').css("background-color", "#61aa34");
+             $("footer").css("background-color", "#61aa34");
              $(".mainBody").css("background", "url('http://img03.deviantart.net/7b6c/i/2010/184/a/2/green_texture_43_by_capricorn7769.jpg')");
          } else if ($(this).hasClass('purple-select')) {
-             $('.navbar-default').css("background-color", "purple");
-             $("footer").css("background-color", "purple");
+             $('.navbar-default').css("background-color", "#ac42ac");
+             $("footer").css("background-color", "#ac42ac");
              $(".mainBody").css("background", "url('http://img04.deviantart.net/18f8/i/2010/221/0/a/vintage_glass_bottles_texture_by_angelandspot.jpg')");
          }
     });
