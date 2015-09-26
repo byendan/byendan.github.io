@@ -7,7 +7,6 @@ gamejs.preload([]);
 function main() {
 
     var display = gamejs.display.getSurface();
-    gamejs.display.setCaption("Example Draw");
     
     var canHeight = $('canvas').height();
     var canWidth = $('canvas').width();
