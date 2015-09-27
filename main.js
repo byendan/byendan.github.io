@@ -11,6 +11,8 @@ function main() {
     var staticPanda = gamejs.image.load('img/mikos/static1.png');
     staticPanda.scale([20, 2]);
     
+    var instructionFont = new gamejs.font.Font('30px monospace');
+    
     var canHeight = $('canvas').height();
     var canWidth = $('canvas').width();
     var greenBlockHeight = 25;
@@ -25,6 +27,9 @@ function main() {
     var pandaHeight = 0;
     var pandaY = 0;
     var pandaX = 0;
+    
+    var blocks = [];
+    var balls = [];
     
     
 
@@ -63,6 +68,7 @@ function main() {
 
     gamejs.onTick(function(msDuration) {
         display.fill('#ffffff');
+        display.blit(instructionFont.render('J to jump, P to punch', '#000000'), [20, 5]); 
         if(jumpUp && pandaHeight < 105) {
             pandaHeight += 7;
             if(pandaHeight === 105){
