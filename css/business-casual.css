@@ -78,8 +78,8 @@ body {
             border: 1px solid #ccc;
             margin: 20px;
             box-shadow: 14px 10px 30px 0px rgba(50, 50, 50, 0.75);
-            width: calc(100% - 40px);
-            height: calc(100% - 60px);
+            width: calc(80% - 40px);
+            height: calc(50% - 60px);
             position: inherit;
             /** automatically made visible once game is loaded **/
             display:none;
