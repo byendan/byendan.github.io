@@ -19,8 +19,12 @@ function main() {
     var start = false;
     var jumpUp = false;
     var jumpDown = false;
+    var punchRight = false;
+    var punchLeft = false;
+    var pandaLunge = 0;
     var pandaHeight = 0;
     var pandaY = 0;
+    var pandaX = 0;
     
     
 
@@ -45,6 +49,9 @@ function main() {
             }
            } else if (event.key === gamejs.event.K_p) {
             // Punch method   
+            if(!punchLeft && !punchRight){
+                punchRight = true;   
+            }
            }
             
         });
@@ -69,10 +76,24 @@ function main() {
             }
         }
         
+        if(punchRight && pandaLunge < 50){
+            pandaLunge += 10;
+            if(pandaLunge === 50){
+                punchRight = false;
+                punchLeft = true;
+            }
+        } else if(punchLeft && pandaLunge > 0){
+            pandaLunge -= 10;
+            if(pandaLunge === 0){
+                punchLeft = false;   
+            }
+        }
+        
         pandaY = canHeight - greenBlockHeight - staticPanda.getSize()[1] - pandaHeight;
+        pandaX = 25 + pandaLunge;
         
         draw.rect(display, '#46ac41', new gamejs.Rect([0, canHeight - greenBlockHeight], [canWidth, greenBlockHeight]), 0);
-        display.blit(staticPanda, [25, pandaY]);
+        display.blit(staticPanda, [pandaX, pandaY]);
     });
     
     
