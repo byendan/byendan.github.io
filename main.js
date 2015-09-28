@@ -15,6 +15,8 @@ function main() {
     
     var canHeight = $('canvas').height();
     var canWidth = $('canvas').width();
+    var ballHeight = canHeight - 50;
+    var ballWidth = 15;
     var greenBlockHeight = 25;
     var score = 0;
     var alive = false;
@@ -30,6 +32,10 @@ function main() {
     
     var blocks = [];
     var balls = [];
+    
+    var segmentTime = 250;
+    var totalTime = 0;
+    
     
     
 
@@ -67,8 +73,12 @@ function main() {
 
 
     gamejs.onTick(function(msDuration) {
+        
+        // Gets the screen Ready
         display.fill('#ffffff');
-        display.blit(instructionFont.render('J to jump, P to punch', '#000000'), [20, 5]); 
+        display.blit(instructionFont.render('j to jump, p to punch', '#000000'), [20, 5]); 
+        
+        // Moves panda up and down
         if(jumpUp && pandaHeight < 105) {
             pandaHeight += 7;
             if(pandaHeight === 105){
@@ -82,6 +92,7 @@ function main() {
             }
         }
         
+        // Moves panda left and right
         if(punchRight && pandaLunge < 50){
             pandaLunge += 10;
             if(pandaLunge === 50){
@@ -95,12 +106,38 @@ function main() {
             }
         }
         
+        // Set the panda x and y for this draw
         pandaY = canHeight - greenBlockHeight - staticPanda.getSize()[1] - pandaHeight;
         pandaX = 25 + pandaLunge;
         
+        
+        // Draw Ground and panda
         draw.rect(display, '#46ac41', new gamejs.Rect([0, canHeight - greenBlockHeight], [canWidth, greenBlockHeight]), 0);
         display.blit(staticPanda, [pandaX, pandaY]);
+        
+        // Calculate and make new enemies
+        totalTime++;
+        if((totalTime % segmentTime) === 0){
+            
+            segmentTime = segmentTime - 20;
+            var enemy = new draw.circle(display, "#333333", [canWidth, canHeight - 50], 15, 0); 
+            var ball = {entity: enemy, x: canWidth, y: ballHeight, };
+            balls.push(ball);
+            
+            
+        }
+        
+        // Move enemies and draw them
+        var i;
+        for(i = 0; i < balls.length; i++){
+            balls[i].x -= 5;
+            //balls[i].entity.blit(display, [balls[i].x, balls[i].y]);
+            draw.circle(display, "#333333", [balls[i].x, ballHeight], ballWidth, 0); 
+        }
+        
     });
+    
+    
     
     
 };
