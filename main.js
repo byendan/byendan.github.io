@@ -17,6 +17,8 @@ function main() {
     var canWidth = $('canvas').width();
     var ballHeight = canHeight - 50;
     var ballWidth = 15;
+    var blockHeight = canHeight - 50;
+    var blockWidth = 25;
     var greenBlockHeight = 25;
     var score = 0;
     var alive = false;
@@ -119,10 +121,24 @@ function main() {
         totalTime++;
         if((totalTime % segmentTime) === 0){
             
-            segmentTime = segmentTime - 20;
-            var enemy = new draw.circle(display, "#333333", [canWidth, canHeight - 50], 15, 0); 
-            var ball = {entity: enemy, x: canWidth, y: ballHeight, };
-            balls.push(ball);
+            segmentTime -= 20;
+            var firstNum = Math.random();
+            if(firstNum < 0.34){
+                if(Math.random() < 0.5) {
+                    var ball = { x: canWidth + 15, y: ballHeight - 60};   
+                } else {
+                    var ball = { x: canWidth, y: ballHeight };
+                }
+                balls.push(ball);
+            } else if(firstNum < 0.67){
+                var block = { x: canWidth, y: blockHeight };
+                blocks.push(block);  
+            } else {
+                var ball = { x: canWidth + 15, y: ballHeight - 60};
+                var block = {x:canWidth, y: blockHeight };
+                balls.push(ball);
+                blocks.push(block);
+            }
             
             
         }
@@ -131,8 +147,13 @@ function main() {
         var i;
         for(i = 0; i < balls.length; i++){
             balls[i].x -= 5;
-            //balls[i].entity.blit(display, [balls[i].x, balls[i].y]);
-            draw.circle(display, "#333333", [balls[i].x, ballHeight], ballWidth, 0); 
+            draw.circle(display, "#c13b3b", [balls[i].x, balls[i].y], ballWidth, 0); 
+             
+        }
+        var j;
+        for(j = 0; j < blocks.length; j++){
+            blocks[j].x -= 5;
+            draw.rect(display, "#b2d326", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
         }
         
     });
