@@ -9,6 +9,10 @@ function main() {
 
     var display = gamejs.display.getSurface();
     var staticPanda = gamejs.image.load('img/mikos/static1.png');
+    var pandaWalk1 = gamejs.image.load('img/mikos/walk1.png');
+    var pandaWalk2 = gamejs.image.load('img/mikos/walk2.png');
+    var pandaWalk3 = gamejs.image.load('img/mikos/walk3.png');
+    var pandaWalk4 = gamejs.image.load('img/mikos/walk4.png');
     staticPanda.scale([20, 2]);
     
     var instructionFont = new gamejs.font.Font('30px monospace');
@@ -38,6 +42,7 @@ function main() {
     var segmentTime = 50;
     var totalTime = 0;
     var cycle = 0;
+    var walker = 0;
     
     
     
@@ -109,6 +114,7 @@ function main() {
             }
         }
         
+        totalTime++;
         // Set the panda x and y for this draw
         pandaY = canHeight - greenBlockHeight - staticPanda.getSize()[1] - pandaHeight;
         pandaX = 25 + pandaLunge;
@@ -116,10 +122,27 @@ function main() {
         
         // Draw Ground and panda
         draw.rect(display, '#46ac41', new gamejs.Rect([0, canHeight - greenBlockHeight], [canWidth, greenBlockHeight]), 0);
-        display.blit(staticPanda, [pandaX, pandaY]);
+        
+        
+        if(walker <= 8){
+            walker++;
+            display.blit(pandaWalk1, [pandaX, pandaY]);
+        } else if(walker <= 16) {
+            walker++;
+            display.blit(pandaWalk2, [pandaX, pandaY]);
+        } else if(walker <= 24) {
+            walker++;
+            display.blit(pandaWalk3, [pandaX, pandaY]);
+        } else  {
+            walker++;
+            if(walker === 32){
+                walker = 0;
+            }
+            display.blit(pandaWalk4, [pandaX, pandaY]);
+        }
         
         // Calculate and make new enemies
-        totalTime++;
+        
         if((totalTime % segmentTime) === 0){
             if(cycle < 15){
                 cycle++;   
