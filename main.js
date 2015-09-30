@@ -189,5 +189,5 @@ function main() {
     
 };
 
-gamejs.preload(['img/mikos/hit1.png', 'img/mikos/hit2.png', 'img/mikos/jump1.png', 'img/mikos/jump2.png', 'img/mikos/jump3.png', 'img/mikos/portrait.png', 'img/mikos/static1.png', 'img/mikos/walk1.png', 'img/mikos/walk2.png', 'img/mikos/walk3.png', 'img/mikos/walk4.png']);
+gamejs.preload(['img/mikos/portrait.png', 'img/mikos/static1.png', 'img/mikos/walk1.png', 'img/mikos/walk2.png', 'img/mikos/walk3.png', 'img/mikos/walk4.png']);
 gamejs.ready(main);

@@ -15,6 +15,7 @@ body {
 }
 
 
+
 .opsBox ul {
     background: black;
     position: fixed;
@@ -182,6 +183,7 @@ hr {
 footer {
     background: #fff;
     background: rgb(82, 172, 199);
+    width: 100%;
 }
 
 footer p {
@@ -223,6 +225,7 @@ footer p {
 
     .navbar {
         min-height: 0;
+        text-decoration: none;
         color: black;
     }
 
@@ -232,6 +235,11 @@ footer p {
         background: rgb(82, 172, 199);
         color: none;
         color: black;
+    }
+    
+    .navbar .navbar-brand {
+        text-decoration-color: none;
+        color: black; 
     }
     
     
@@ -287,5 +295,89 @@ footer p {
         content: '';
         display: table;
         clear: both;
+    }
+    .top-divider {
+        margin-top: 0;
+    }
+
+    .img-left {
+        float: left;
+        margin-right: 25px;
+    }
+
+    .navbar {
+        border-radius: 0;
+        
+    }
+
+    .navbar-header {
+        display: none;
+        color: black;
+    }
+
+    .navbar {
+        min-height: 0;
+        text-decoration: none;
+        color: black;
+    }
+
+    .navbar-default {
+        border: none;
+        background: none;
+        background: rgb(82, 172, 199);
+        text-decoration: none;
+        color: black;
+    }
+    
+    .navbar .navbar-brand {
+        text-decoration-color: none;
+        color: black; 
+    }
+    
+    
+
+    .navbar .nav>li>a {
+        padding: 20px;
+        background-color: rgba(61, 141, 250, 0.37);
+        border: solid;
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 1px;
+        border-bottom-width: 0px;
+        border color: rgba(0, 0, 0, 0.24);
+        text-decoration: none;
+        color: black;
+    }
+    
+    .navbar .nav>li>a:hover {
+        padding: 20px;
+        background: none;
+        background-color: rgba(56, 193, 182, 0.9);
+        border: solid;
+        border-top-width: 0px;
+        border-left-width: 1px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        color: black;
+    }
+    
+    .navbar-collapse .navbar-text {
+        text-decoration: none;
+        font-size: 1.5em;  
+        color: black;
+    }
+
+    .navbar-nav>li>a {
+        line-height: normal;
+        color: black;
+    }
+
+    .navbar-nav {
+        display: table;
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.25em;
+        color: black;
     }
 }
