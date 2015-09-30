@@ -35,8 +35,9 @@ function main() {
     var blocks = [];
     var balls = [];
     
-    var segmentTime = 250;
+    var segmentTime = 50;
     var totalTime = 0;
+    var cycle = 0;
     
     
     
@@ -120,8 +121,10 @@ function main() {
         // Calculate and make new enemies
         totalTime++;
         if((totalTime % segmentTime) === 0){
-            
-            segmentTime -= 20;
+            if(cycle < 15){
+                cycle++;   
+            }
+
             var firstNum = Math.random();
             if(firstNum < 0.34){
                 if(Math.random() < 0.5) {
@@ -146,14 +149,14 @@ function main() {
         // Move enemies and draw them
         var i;
         for(i = 0; i < balls.length; i++){
-            balls[i].x -= 5;
-            draw.circle(display, "#c13b3b", [balls[i].x, balls[i].y], ballWidth, 0); 
+            balls[i].x -= (5 + cycle);
+            draw.circle(display, "#811d1d", [balls[i].x, balls[i].y], ballWidth, 0); 
              
         }
         var j;
         for(j = 0; j < blocks.length; j++){
-            blocks[j].x -= 5;
-            draw.rect(display, "#b2d326", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
+            blocks[j].x -= (5 + cycle);
+            draw.rect(display, "#536215", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
         }
         
     });
