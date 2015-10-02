@@ -14,6 +14,11 @@ body {
     background: url('https://c1.staticflickr.com/5/4032/4358240872_fc69c44084.jpg');
 }
 
+.mainBody ul li a {
+    text-decoration: none;
+    
+    color: #dbe141;
+}
 
 
 .opsBox ul {
