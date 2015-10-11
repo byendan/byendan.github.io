@@ -173,14 +173,21 @@ function main() {
         var i;
         for(i = 0; i < balls.length; i++){
             balls[i].x -= (5 + cycle);
-            draw.circle(display, "#811d1d", [balls[i].x, balls[i].y], ballWidth, 0); 
+            draw.circle(display, "#811d1d", [balls[i].x, balls[i].y], ballWidth, 0);
+            if( balls[i].x == (0 - ballWidth)) {
+                balls.splice(i, 1);   
+            }
              
         }
         var j;
         for(j = 0; j < blocks.length; j++){
             blocks[j].x -= (5 + cycle);
             draw.rect(display, "#536215", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
+            if (blocks[j].x == (0 - blockWidth)){
+                blocks.splice(j, 1);
+            }
         }
+        
         
     });
     
