@@ -29,6 +29,7 @@ function main() {
     var score = 0;
     var alive = false;
     var start = false;
+    var died = false;
     var jumpUp = false;
     var jumpDown = false;
     var punchRight = false;
@@ -59,10 +60,12 @@ function main() {
         });
         
         gamejs.event.onKeyDown(function(event) {
-           if (event.key === gamejs.event.K_s){
-               if(!start && !alive){
+           if (event.key === gamejs.event.K_s || event.key === gamejs.event.K_r){
+               if(!alive){
                     start = true;
                     alive = true;
+                    score = 0;
+                    died = false;
                }
            } else if (event.key === gamejs.event.K_j) {
             // Jump method   
@@ -87,7 +90,7 @@ function main() {
         
         // Gets the screen Ready
         display.fill('#ffffff');
-        display.blit(instructionFont.render('j to jump, p to punch  ', '#000000'), [20, 5]); 
+        display.blit(instructionFont.render('j to jump, p to punch, s to start  ', '#000000'), [20, 5]); 
         display.blit(scoreFont.render('Score: ' + score, '#000000'), [canWidth - 90, 15]);
         
         // Draw Ground and panda
@@ -97,6 +100,12 @@ function main() {
            pandaY = canHeight - greenBlockHeight - staticPanda.getSize()[1] - pandaHeight;
         pandaX = 25 + pandaLunge;
         display.blit(staticPanda, [pandaX, pandaY]); 
+        display.blit(instructionFont.render('Punch the red balls to score', '#000000'), [20, 32]);
+        display.blit(instructionFont.render('jump over green blocks to survive', '#000000'), [20, 53]); 
+        }
+        
+        if(died) {
+            display.blit(instructionFont.render('You died! r to restart', '#000000'), [40, 100]); 
         }
         
         
@@ -203,7 +212,7 @@ function main() {
         for(j = 0; j < blocks.length; j++){
             blocks[j].x -= (5 + cycle);
             draw.rect(display, "#536215", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
-            if (blocks[j].x == (0 - blockWidth)){
+            if (blocks[j].x < (0 - blockWidth)){
                 blocks.splice(0, 1);
             }
         }
@@ -216,8 +225,20 @@ function main() {
                 balls.splice(0, 1);
                 score++;
             }
-        } 
         }
+            
+        // Check Death
+        if(blocks.length > 0 && blocks[0].x < 50) {
+            var pandaRect = new gamejs.Rect(pandaX, pandaY, curPanda.getSize()[0], curPanda.getSize()[1]);
+            var blockRect = new gamejs.Rect(blocks[0].x, blocks[0].y, blockWidth, blockHeight);
+            if(blockRect.collideRect(pandaRect)) {
+                alive = false;
+                died = true;
+                blocks = [];
+                balls = [];
+            }
+        }
+    }
         
         
        
