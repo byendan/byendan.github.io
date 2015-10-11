@@ -13,9 +13,11 @@ function main() {
     var pandaWalk2 = gamejs.image.load('img/mikos/walk2.png');
     var pandaWalk3 = gamejs.image.load('img/mikos/walk3.png');
     var pandaWalk4 = gamejs.image.load('img/mikos/walk4.png');
+    
     staticPanda.scale([20, 2]);
     
-    var instructionFont = new gamejs.font.Font('30px monospace');
+    var instructionFont = new gamejs.font.Font('30px monospace Hind\ Vadodara');
+    var scoreFont = new gamejs.font.Font(' 20px monospace Roboto');
     
     var canHeight = $('canvas').height();
     var canWidth = $('canvas').width();
@@ -35,6 +37,7 @@ function main() {
     var pandaHeight = 0;
     var pandaY = 0;
     var pandaX = 0;
+    var curPanda = staticPanda;
     
     var blocks = [];
     var balls = [];
@@ -84,9 +87,22 @@ function main() {
         
         // Gets the screen Ready
         display.fill('#ffffff');
-        display.blit(instructionFont.render('j to jump, p to punch', '#000000'), [20, 5]); 
+        display.blit(instructionFont.render('j to jump, p to punch  ', '#000000'), [20, 5]); 
+        display.blit(scoreFont.render('Score: ' + score, '#000000'), [canWidth - 90, 15]);
         
-        // Moves panda up and down
+        // Draw Ground and panda
+        draw.rect(display, '#46ac41', new gamejs.Rect([0, canHeight - greenBlockHeight], [canWidth, greenBlockHeight]), 0);
+        
+        if(!alive){
+           pandaY = canHeight - greenBlockHeight - staticPanda.getSize()[1] - pandaHeight;
+        pandaX = 25 + pandaLunge;
+        display.blit(staticPanda, [pandaX, pandaY]); 
+        }
+        
+        
+        // Game Play State
+        if(alive){
+           // Moves panda up and down
         if(jumpUp && pandaHeight < 105) {
             pandaHeight += 7;
             if(pandaHeight === 105){
@@ -120,24 +136,28 @@ function main() {
         pandaX = 25 + pandaLunge;
         
         
-        // Draw Ground and panda
-        draw.rect(display, '#46ac41', new gamejs.Rect([0, canHeight - greenBlockHeight], [canWidth, greenBlockHeight]), 0);
+        
+        
         
         
         if(walker <= 8){
             walker++;
+            curPanda = pandaWalk1;
             display.blit(pandaWalk1, [pandaX, pandaY]);
         } else if(walker <= 16) {
             walker++;
+            curPanda = pandaWalk2;
             display.blit(pandaWalk2, [pandaX, pandaY]);
         } else if(walker <= 24) {
             walker++;
+            curPanda = pandaWalk3;
             display.blit(pandaWalk3, [pandaX, pandaY]);
         } else  {
             walker++;
             if(walker === 32){
                 walker = 0;
             }
+            curPanda = pandaWalk4;
             display.blit(pandaWalk4, [pandaX, pandaY]);
         }
         
@@ -174,8 +194,8 @@ function main() {
         for(i = 0; i < balls.length; i++){
             balls[i].x -= (5 + cycle);
             draw.circle(display, "#811d1d", [balls[i].x, balls[i].y], ballWidth, 0);
-            if( balls[i].x == (0 - ballWidth)) {
-                balls.splice(i, 1);   
+            if( balls[i].x < (0 - ballWidth)) {
+                balls.splice(0, 1);   
             }
              
         }
@@ -184,10 +204,23 @@ function main() {
             blocks[j].x -= (5 + cycle);
             draw.rect(display, "#536215", new gamejs.Rect([blocks[j].x,blocks[j].y],[blockWidth, blockWidth]), 0);
             if (blocks[j].x == (0 - blockWidth)){
-                blocks.splice(j, 1);
+                blocks.splice(0, 1);
             }
         }
         
+         // Check ball hits
+        if(balls.length > 0 && ( punchRight || punchLeft )){
+            var ballRect = new gamejs.Rect(balls[0].x, balls[0].y, ballWidth, ballWidth);
+            var pandaRect = new gamejs.Rect(pandaX, pandaY, curPanda.getSize()[0], curPanda.getSize()[1]);
+            if(ballRect.collideRect(pandaRect)){
+                balls.splice(0, 1);
+                score++;
+            }
+        } 
+        }
+        
+        
+       
         
     });
     
