@@ -66,6 +66,8 @@ function main() {
                     alive = true;
                     score = 0;
                     died = false;
+                    totalTime = 0;
+                    segmentTime = 50;
                }
            } else if (event.key === gamejs.event.K_j) {
             // Jump method   
