@@ -15,8 +15,7 @@ body {
 }
 
 .mainBody ul li a {
-    text-decoration: none;
-    
+    text-decoration: none; 
     color: #dbe141;
 }
 
@@ -30,10 +29,6 @@ body {
     list-style-type: none;
     height: 30px;
     z-index: 500;
-}
-
-.opsBox ul li {
-  
 }
 
 .theme-edit {
@@ -141,6 +136,7 @@ hr {
 footer {
     background: #fff;
     background: rgb(82, 172, 199);
+    float: left;
     min-width: 100%;
 }
 
@@ -153,6 +149,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
+        float: left;
         min-width: 100%;
     }
 
@@ -234,6 +231,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
+        float: left;
         min-width: 100%;
     }
 
