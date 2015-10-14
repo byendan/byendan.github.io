@@ -131,12 +131,17 @@ hr {
     color: black;
 }
 
+.navbar {
+ mid-width: 100%;   
+    
+}
+
 
 
 footer {
     background: #fff;
     background: rgb(82, 172, 199);
-    width: 100%;
+    min-width: 100%;
 }
 
 footer p {
@@ -148,6 +153,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
+        min-width: 100%;
     }
 
     .navbar-header {
@@ -228,7 +234,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
-        
+        min-width: 100%;
     }
 
     .navbar-header {
