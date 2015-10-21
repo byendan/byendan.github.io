@@ -90,6 +90,16 @@ body {
     color: black;   
 }
 
+.about-body h1{
+    font-family: 'Arvo', serif;   
+}
+
+.about-content {
+    position: relative;
+    height: 500px;  
+    width: 100%;
+}
+
 #gjs-canvas {
             border: 1px solid #ccc;
             margin: 20px;
