@@ -82,6 +82,16 @@ body {
     bottom: 20px;
 }
 
+.box-2-row {
+    background-color: #E8EAEB;  
+    padding: 20px;
+    margin-bottom: 100px;
+    height: 310px;
+    width: 100%;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
 .mainBody h2 {
     color: black;   
 }
@@ -187,6 +197,10 @@ footer p {
 .box-1-row a:hover {
     text-decoration: none;   
 }   
+
+.box-2-row a:hover {
+    text-decoration: none;   
+}
 	
     .boxInner {
         border-radius: 8px;
