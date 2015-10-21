@@ -101,6 +101,12 @@ body {
     background-color: #D4EAF1;
 }
 
+.about-text p {
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+}
+
 #gjs-canvas {
             border: 1px solid #ccc;
             margin: 20px;
