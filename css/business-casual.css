@@ -61,17 +61,25 @@ body {
 .mainBody {
     position: relative;
     left: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: black;
     
 }
 
 .box-1-row {
     position: relative;
-    margin: 20px;
     padding: 20px;
     margin-bottom: 100px;
-    
+    background-color: #E8EAEB;
+    height: 310px;
+    width: 100%;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.boxOne {
+    position: relative;
+    bottom: 20px;
 }
 
 .mainBody h2 {
