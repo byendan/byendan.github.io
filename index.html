@@ -83,8 +83,8 @@
     </nav>
 
     <div class="opsBox">
-        <ul class="list-inline">
-                <li><h4>Theme</h4></li>
+        <ul>
+            <li><h5><strong>Theme</strong></h5></li>
                 
                 <li>
                     <div class="def-select theme-edit">
@@ -146,20 +146,20 @@
     $('.theme-edit').click(function() {
          if ($(this).hasClass('def-select')) {
              $('.navbar-default').css("background-color", "rgb(82, 172, 199)");
-             $("footer").css("background-color", "rgb(82, 172, 199)");
-             $("body").css("background", "url('/img/backBlue.jpg')");
+             $("footer").css("background-color", "#52acc7");
+             $("body").css("background-color", "#D4EAF1");
          } else if ($(this).hasClass('red-select')) {
              $('.navbar-default').css("background-color", "#ce3939");
              $("footer").css("background-color", "#ce3939");
-             $("body").css("background", "url('/img/backRed.jpg')");
+             $("body").css("background-color", "#F2CECE");
          } else if ($(this).hasClass('green-select')) {
              $('.navbar-default').css("background-color", "#61aa34");
              $("footer").css("background-color", "#61aa34");
-             $("body").css("background", "url('/img/backGreen.jpg')");
+             $("body").css("background-color", "#D8EACC");
          } else if ($(this).hasClass('purple-select')) {
              $('.navbar-default').css("background-color", "#ac42ac");
              $("footer").css("background-color", "#ac42ac");
-             $("body").css("background", "url('/img/backPurple.jpg')");
+             $("body").css("background-color", "#EAD0EA");
          }
     });
     </script>
