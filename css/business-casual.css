@@ -314,7 +314,15 @@ footer p {
         font-size: 1.25em;
         color: black;
     }
-     
+ 
+    .box-1-row {
+        height: 500px;
+    }
+    
+    .box-2-row {
+        height: 600px; 
+    }
+        
     
 }
 
