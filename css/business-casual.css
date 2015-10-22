@@ -322,6 +322,11 @@ footer p {
     .box-2-row {
         height: 600px; 
     }
+    
+    .mainBody {
+    margin-left: 25px;
+    margin-right: auto;
+}
         
     
 }
