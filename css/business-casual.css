@@ -317,15 +317,17 @@ footer p {
  
     .box-1-row {
         height: 500px;
+        width: 100%;
     }
     
     .box-2-row {
-        height: 600px; 
+        height: 600px;
+        width:100%
     }
     
     .mainBody {
     margin-left: 25px;
-    margin-right: auto;
+    
 }
         
     
@@ -416,10 +418,12 @@ footer p {
     
     .box-1-row {
         height: 600px;
+        width: 100%;
     }
     
     .box-2-row {
-        height: 700px; 
+        height: 700px;
+        width:100%;
     }
     
 }
