@@ -90,7 +90,7 @@ body {
     background-color: #E8EAEB;  
     padding: 20px;
     margin-bottom: 100px;
-    height: 310px;
+    height: 370px;
     width: 100%;
     border-top: solid 1px black;
     border-bottom: solid 1px black;
@@ -340,7 +340,7 @@ footer p {
     }
     
     .box-3-row {
-        height: 600px;
+        height: 700px;
         width: 100%;
     }
     
