@@ -328,6 +328,15 @@ footer p {
         font-size: 1.25em;
         color: black;
     }
+    
+    .box {
+        
+      float: left;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      padding-bottom: 20%;
+    }
  
     .box-1-row {
         height: 500px;
