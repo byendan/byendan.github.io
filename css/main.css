@@ -1,0 +1,169 @@
+body {
+  font-family: Trebuchet MS;
+  background: #F5F5F5;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited {
+  color: #00ACF1;
+}
+
+h1, h2 {
+  margin-top: 0
+}
+
+header {
+  background: #fff;
+}
+
+header img {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px 0 15px;
+}
+
+header .subTitle {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 20px 0 20px 50px;
+  float: left;
+  width: 40%;
+  margin-left: 30%;
+}
+
+main .group {
+  border: 1px solid #eee;
+  background-color: #fefefe;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+aside {
+  box-sizing: border-box;
+  padding: 20px;
+  float: left;
+  width: 20%;
+}
+
+@media(max-width: 1200px) {
+  main {
+    margin-left: 0;
+    width: 70%;
+  }
+
+  aside {
+    width: 30%;
+  }
+}
+
+@media(max-width: 700px) {
+  main {
+    margin-left: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+  }
+}
+
+
+aside button {
+  cursor: pointer;
+  background-color: #00ACF1;
+  color: #fff;
+  border-width: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 5px 10px;
+}
+
+.invoca label {
+  display: inline-block;
+  margin-right: 5px;
+  min-width: 140px;
+  text-align: right;
+}
+
+.invoca span {
+  overflow: hidden;
+  padding: 3px;
+  position: relative;
+  top: -1px;
+  width: 183px;
+}
+
+.invoca input {
+  border-radius: 2px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px 0;
+  padding-left: 5px;
+  width: 183px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.phone-number {
+  font-size:25px;
+}
+
+li {
+  list-style: none;
+}
+
+.code {
+  font-family: Monaco, 'Courier New';
+}
+
+
+/* Heartbeat animation */
+
+@-webkit-keyframes heartbeat{
+  0%     { -webkit-transform:scale(1,1); }
+  49%    { -webkit-transform:scale(.5,.5); }
+  50%    { background-color:rgba(0,200,0,.2); }
+  100%   { -webkit-transform:scale(1,1); }
+}
+@-moz-keyframes heartbeat{
+  0%     { -moz-transform:scale(1,1); }
+  49%    { -moz-transform:scale(.5,.5); }
+  50%    { background-color:rgba(0,200,0,.2); }
+  100%   { -moz-transform:scale(1,1); }
+}
+@keyframes heartbeat{
+  0%     { transform:scale(1,1); }
+  49%    { transform:scale(.5,.5); }
+  50%    { background-color:rgba(0,200,0,.2); }
+  100%   { transform:scale(1,1); }
+}
+
+.heartbeat {
+  animation: 1.65s ease 0s normal none infinite running heartbeat;
+  background-color: rgba(0, 200, 0, 0.5);
+  border-radius: 30px;
+  height: 15px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 15px;
+  display: inline-block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-animation: heartbeat 1.65s infinite;
+}
+
+.heartbeat + ul {
+  margin-top: -30px;
+}

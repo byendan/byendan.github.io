@@ -1,172 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Single-Number Invoca Tags Demo Page</title>
+        <link rel="icon" href="favicon.png" type="image/png"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    </head>
+    <body>
+        <header>
+            <img src="images/invoca.png"/>
+            <div class="subTitle" id="header-info"></div>
+        </header>
 
-<head>
+        <main>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Brendan Brown</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-    
-    <link href='https://fonts.googleapis.com/css?family=Roboto|Hind+Vadodara' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="gamejs/gamejs-2.0.1.js"></script>
-    <script>
-        require.setModuleRoot('./');
-        require.run('main')
-    </script>
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                
-                <a class="navbar-brand" href="index.html">Home</a>
-                
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            
-            
-            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-                <a href="index.html"><p class="navbar-text"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Brendan Brown</p></a>
-                <ul class="nav navbar-nav pull-right">
-                    
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="examples.html">Examples</a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="http://wfs.sbcc.edu/staff/bgbrown1/BrendanDevResume.pdf">Resume</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <div class="opsBox">
-        <ul>
-            <li><h5><strong>Theme</strong></h5></li>
-                
-                <li>
-                    <div class="def-select theme-edit">
-                    </div>
-                </li>
-                <li>
-                    <div class="red-select theme-edit">
-                    </div>
-                </li>
-                <li>
-                    <div class="green-select theme-edit">
-                    </div>
-                </li>
-                <li>
-                    <div class="purple-select theme-edit">
-                    </div>
-                </li>
-        </ul>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            
-            
-            <div class="col-md-10 mainBody">
-                <h2>Welcome to my page</h2>
-                <p>This is a glimpse of my work, feel free to read more about me and view other projects I have worked on.</p>
-                <br>
-                
-                
-                <div id="gjs-loader">
-                    <progress max=1 min=0 steps=0.1></progress>
-                    <br/>Loading...
-                </div>
-                <canvas id="gjs-canvas"></canvas>
-                <p>Made using JS, JQuery, and gameJS.</p>
-            </div>
-        </div>
-        
-        
-
-    </div>
-    <!-- /.container -->
-
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a target="_blank" href="https://github.com/byendan"><img src="icons/github.png"></a>
+            <div class="invoca">
+                <div class="group">
+                    <h2>Please contact at us at:</h2>
+                    <ul>
+                        <span class="phone" data-invoca-campaign-id="85">6614761234</span>
+                        <span class="phone" data-invoca-campaign-id="85">8005551234</span>
+                        <span class="phone" data-invoca-campaign-id="85">6614764567</span>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    
-    <script>
-    $('.theme-edit').click(function() {
-         if ($(this).hasClass('def-select')) {
-             $('.navbar-default').css("background-color", "rgb(82, 172, 199)");
-             $("footer").css("background-color", "#52acc7");
-             $("body").css("background-color", "#D4EAF1");
-         } else if ($(this).hasClass('red-select')) {
-             $('.navbar-default').css("background-color", "#ce3939");
-             $("footer").css("background-color", "#ce3939");
-             $("body").css("background-color", "#F2CECE");
-         } else if ($(this).hasClass('green-select')) {
-             $('.navbar-default').css("background-color", "#61aa34");
-             $("footer").css("background-color", "#61aa34");
-             $("body").css("background-color", "#D8EACC");
-         } else if ($(this).hasClass('purple-select')) {
-             $('.navbar-default').css("background-color", "#ac42ac");
-             $("footer").css("background-color", "#ac42ac");
-             $("body").css("background-color", "#EAD0EA");
-         }
-    });
-    </script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
+        </main>
+        <script>
+          (function(i,n,v,o,c,a) { i.InvocaTagId = o; var s = n.createElement('script'); s.type = 'text/javascript';
+            s.async = true; s.src = ('https:' === n.location.protocol ? 'https://' : 'http://' ) + v;
+            var fs = n.getElementsByTagName('script')[0]; fs.parentNode.insertBefore(s, fs);
+          })(window, document, 'solutions.invocacdn.com/js/invoca-latest.min.js', '504/1744834204');
+        </script>
+    </body>
 </html>
