@@ -36,11 +36,16 @@
         <script>
           console.log("HREF is: ", window.location.href);
           console.log("Location is: ", window.location);
+          console.log("Search is: ", window.location.search);
+          console.log("Referrer is: ", document.referrer);
           window.invocaLocation = window.location;
+          window.invocaHref = window.location.href;
+          window.invocaSearch = window.location.search;
+          window.invocaReferrer = document.referrer;
           (function(i,n,v,o,c,a) { i.InvocaTagId = o; var s = n.createElement('script'); s.type = 'text/javascript';
             s.async = true; s.src = ('https:' === n.location.protocol ? 'https://' : 'http://' ) + v;
             var fs = n.getElementsByTagName('script')[0]; fs.parentNode.insertBefore(s, fs);
-          })(window, document, 'solutions.invocadev.com/js/invoca-4.41.1-stage.6.min.js', '218/3971426448');
+          })(window, document, 'solutions.invocadev.com/js/invoca-4.41.1-stage.7.min.js', '218/3971426448');
         </script>
     </body>
 </html>
