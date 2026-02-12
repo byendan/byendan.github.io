@@ -37,6 +37,8 @@
           (function(i,n,v,o,c,a) { i.InvocaTagId = o; var s = n.createElement('script'); s.type = 'text/javascript';
             s.async = true; s.src = ('https:' === n.location.protocol ? 'https://' : 'http://' ) + v;
             var fs = n.getElementsByTagName('script')[0]; fs.parentNode.insertBefore(s, fs);
+            window.invocaLocation = window.location;
+            Invoca.windowLocation = window.location;
           })(window, document, 'solutions.invocadev.com/js/invoca-4.41.1-stage.0.min.js', '218/3971426448');
         </script>
     </body>
